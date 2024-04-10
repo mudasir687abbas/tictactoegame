@@ -1,0 +1,869 @@
+*{
+box-sizing: border-box;
+  padding:0px;
+  margin:0px;
+}
+body{
+    box-sizing: border-box;
+    padding:0px;
+    margin:0px;
+    background-color: gold;
+    overflow:hidden;
+    width:100vw;
+    height:100vh;
+  }
+
+@media only screen and (0px<=width<=576px){
+  :root{
+  font-size:20px;
+}
+.GameContainer{
+    width:100%;
+    height:100%;
+
+}
+.ContainerBoxes{
+    position:absolute;
+}
+.LandingBox{
+    width:100%;
+    height:100vh;
+    z-index:4;
+    background: linear-gradient(90deg,gold,goldenrod);
+    display:flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    gap:50px;
+}
+.MoveLandingBox{
+    transform-origin: left top;
+    transform:rotate(100deg);
+    transition: transform 2s linear 1s;
+}
+.TextBox{
+    width:100%;
+    height:30%;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap:20px;
+}
+.Tic{
+    width:100%;
+    height:max-content;
+    text-align: center;
+    font-size: 4rem;
+    font-weight: bold;
+    color:yellow;
+}
+.Tactoe{
+    width:100%;
+    height:max-content;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    color:yellow;
+    
+}
+.ProgressBox{
+  width:100%;
+  height:30vh;
+  display: flex;
+  flex-direction:column;
+  justify-content: center;
+  align-items: center;
+}
+.ProgressBorder{
+  width:90%;
+  height:max-content;
+  padding:3px;
+  border:3px solid yellow;
+  border-radius:200px;
+
+}
+.ProgressBar{
+  width:100%;
+  height:5vh;
+  border-radius:200px;
+}
+.ChosingBox{
+  width:100vw;
+  height:100vh;
+  background: linear-gradient(45deg,gold,goldenrod);
+  z-index:3;
+  transition:transform 1s linear;
+  display: flex;
+  flex-direction:column ;
+  justify-content: center;
+  align-items: center;
+}
+.ChosingBox h1{
+  width:100%;
+  font-size: 2rem;
+  text-align: center;
+  padding:20px;
+  color:yellow;
+}
+.TokkenBox{
+  width:100%;
+  height:200px;
+  display:flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.Tokken{
+  width:100px;
+  height:100px;
+  font-size:4rem;
+  font-weight: bold;
+  color:yellow;
+  display: flex;
+  flex-direction:column ;
+  justify-content: center;
+  align-items: center;
+  
+}
+.BorderRadius{
+  
+  border-radius:100px;
+  background-color: yellow;
+  color:goldenrod;
+  
+}
+.PlayBtn{
+  width:100%;
+  display:flex;
+  justify-content:center;
+}
+button{
+  width:150px;
+  height:50px;
+  border-radius: 10px;
+  background: linear-gradient(45deg, gold,goldenrod);
+  border-color:goldenrod;
+  color:yellow;
+  outline:none;
+  padding:10px;
+  font-weight:bold;
+  font-size:1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.MoveUpChosingBox{
+  transform:translateY(-150%);
+}
+.BoardGameBox{
+  width:100vw;
+  height:100vh;
+  z-index:1;
+  background: linear-gradient(45deg,gold,goldenrod);
+  display:flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.BoardGameBox .BoardTextBox{
+  width:100%;
+  height:max-content;
+  background-color: gold;
+   padding:10px;
+   
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+  
+}
+.BoardGameBox .BoardTextBox h2{
+  width:50%;
+  height:65px;
+  color:yellow;
+  border-radius:20px;
+  font-size: 1.5rem;
+  font-weight:bold;
+  background-color: gold;
+  display: flex;
+  justify-content: center;
+   align-items: center;
+   
+  
+}
+.BoardGameBox .BoardTextBox .TurnShowBox{
+  width:50%;
+  height:65px;
+  color:yellow;
+  border-radius:20px;
+  font-size: 2rem;
+  font-weight:bold;
+  background-color: goldenrod;
+  display: flex;
+  justify-content: center;
+   align-items: center;
+  
+}
+.BoardBox{
+  width:100%;
+  height:60%;
+  z-index:1;
+  display:grid;
+  grid-template-columns: repeat(3,100px);
+  grid-template-rows:repeat(3,100px);
+  grid-gap:1%;
+  justify-content: center;
+  align-content: center;
+  
+}
+.Boxes{
+  transition: background-color,color,border-radius,transform 2s linear ;
+  border:10px solid yellow;
+  color:yellow;
+  font-weight:bold;
+  font-size:4rem;
+  display:flex;
+  justify-content:center;
+  align-items: center;
+}
+.DrawBox{ 
+  width:100%;
+  height:600px;
+  
+  transition: transform 2s linear;
+  transform:translateY(-200vh);
+  z-index:2;
+  display:flex;
+  justify-content:center;
+  align-items: center;
+}
+.DrawText{
+  
+  width:90%;
+  height:max-content;
+  padding:20px;
+  border-radius: 20px;
+  font-weight: bold;
+  color:white;
+  background-color:crimson;
+  display:flex;
+  justify-content:center;
+  align-items: center;
+}
+.WinnerBox{
+  
+  width:100%;
+  height:100vh;
+  transition: transform 2s linear 3s;
+  transform:translateY(-100%);
+  z-index:2;
+  display:flex;
+  flex-direction: column;
+  justify-content:center;
+  align-items: center;
+  gap:50px;
+}
+.WinnerText{
+  width:80%;
+  height:300px;
+  border-radius: 20px;
+  color:white;
+  background-color:goldenrod;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.WinnerText h1{
+  width:100%;
+  text-align: center;
+  font-size: 3rem;
+  color:yellow;
+}
+.WinnerText .CongratulationBox{
+  font-size: 1.5rem;
+  color:green;
+}
+.WinnerText h3{
+  color:green;
+}
+.GiveBorderRadiusToWinnerBoxes{
+border-color:yellow; 
+background-color: yellow;
+ color:goldenrod;
+  border-radius:100px;
+  transform:scale(1.2);
+}
+} 
+@media only screen and (577px<=width<=767px){
+  :root{
+  font-size:20px;
+}
+.GameContainer{
+    width:100%;
+    height:100%;
+
+}
+.ContainerBoxes{
+    position:absolute;
+}
+.LandingBox{
+    width:100%;
+    height:100vh;
+    z-index:4;
+    background: linear-gradient(90deg,gold,goldenrod);
+    display:flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    gap:50px;
+}
+.MoveLandingBox{
+    transform-origin: left top;
+    transform:rotate(100deg);
+    transition: transform 2s linear 1s;
+}
+.TextBox{
+    width:100%;
+    height:50%;
+  
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap:20px;
+}
+.Tic{
+    width:100%;
+    height:max-content;
+
+    text-align: center;
+    font-size: 5rem;
+    font-weight: bold;
+    color:yellow;
+}
+.Tactoe{
+    width:100%;
+    height:max-content;
+  
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color:yellow;
+    
+}
+.ProgressBox{
+  width:100%;
+  height:30vh;
+  
+  display: flex;
+  flex-direction:column;
+  justify-content: center;
+  align-items: center;
+}
+.ProgressBorder{
+  width:90%;
+  height:max-content;
+  padding:3px;
+  border:3px solid yellow;
+  border-radius:200px;
+
+}
+.ProgressBar{
+  width:100%;
+  height:5vh;
+  border-radius:200px;
+}
+.ChosingBox{
+  width:100vw;
+  height:100vh;
+  background: linear-gradient(45deg,gold,goldenrod);
+  z-index:3;
+  transition:transform 1s linear;
+  display: flex;
+  flex-direction:column ;
+  justify-content: center;
+  align-items: center;
+}
+.ChosingBox h1{
+  width:100%;
+  font-size: 3rem;
+  text-align: center;
+  padding:20px;
+  color:yellow;
+}
+.TokkenBox{
+  width:70%;
+  height:200px;
+   
+  display:flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.Tokken{
+  width:150px;
+  height:150px;
+  font-size:4rem;
+  font-weight: bold;
+  color:yellow;
+  display: flex;
+  flex-direction:column ;
+  justify-content: center;
+  align-items: center;
+  
+}
+.BorderRadius{
+  
+  border-radius:100px;
+  background-color: yellow;
+  color:goldenrod;
+  
+}
+.PlayBtn{
+  width:100%;
+  display:flex;
+  justify-content:center;
+}
+button{
+  width:200px;
+  height:70px;
+  border-radius: 10px;
+  background: linear-gradient(45deg, gold,goldenrod);
+  border-color:goldenrod;
+  color:yellow;
+  outline:none;
+  padding:10px;
+  font-weight:bold;
+  font-size:1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.MoveUpChosingBox{
+  transform:translateY(-150%);
+}
+.BoardGameBox{
+  width:100vw;
+  height:100vh;
+  z-index:1;
+  background: linear-gradient(45deg,gold,goldenrod);
+  display:flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.BoardGameBox .BoardTextBox{
+  width:100%;
+  height:max-content;
+  background-color: gold;
+   padding:10px;
+   
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+  
+}
+.BoardGameBox .BoardTextBox h2{
+  width:50%;
+  height:65px;
+  color:yellow;
+  border-radius:20px;
+  font-size: 3rem;
+  font-weight:bold;
+  background-color: gold;
+  display: flex;
+  justify-content: center;
+   align-items: center;
+   
+  
+}
+.BoardGameBox .BoardTextBox .TurnShowBox{
+  width:50%;
+  height:100px;
+  color:yellow;
+  border-radius:20px;
+  font-size: 3rem;
+  font-weight:bold;
+  background-color: goldenrod;
+  display: flex;
+  justify-content: center;
+   align-items: center;
+  
+}
+.BoardBox{
+  width:100%;
+  height:60%;
+  z-index:1;
+  display:grid;
+  grid-template-columns: repeat(3,150px);
+  grid-template-rows:repeat(3,150px);
+  grid-gap:1%;
+  justify-content: center;
+  align-content: center;
+  
+}
+.Boxes{
+  transition: background-color,color,border-radius,transform 2s linear ;
+  border:10px solid yellow;
+  color:yellow;
+  font-weight:bold;
+  font-size:5rem;
+  display:flex;
+  justify-content:center;
+  align-items: center;
+}
+.DrawBox{ 
+  width:100%;
+  height:600px;
+  
+  transition: transform 2s linear;
+  transform:translateY(-200vh);
+  z-index:2;
+  display:flex;
+  justify-content:center;
+  align-items: center;
+}
+.DrawText{
+  
+  width:90%;
+  height:max-content;
+  padding:20px;
+  border-radius: 20px;
+  font-weight: bold;
+  color:white;
+  background-color:crimson;
+  display:flex;
+  justify-content:center;
+  align-items: center;
+}
+.WinnerBox{
+  
+  width:100%;
+  height:100vh;
+  transition: transform 2s linear 3s;
+  transform:translateY(-100%);
+  z-index:2;
+  display:flex;
+  flex-direction: column;
+  justify-content:center;
+  align-items: center;
+  gap:50px;
+}
+.WinnerText{
+  width:80%;
+  height:300px;
+  border-radius: 20px;
+  color:white;
+  background-color:goldenrod;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.WinnerText h1{
+  width:100%;
+  text-align: center;
+  font-size: 3rem;
+  color:yellow;
+}
+.WinnerText .CongratulationBox{
+  font-size: 1.5rem;
+  color:green;
+}
+.WinnerText h3{
+  color:green;
+}
+.GiveBorderRadiusToWinnerBoxes{
+border-color:yellow; 
+background-color: yellow;
+ color:goldenrod;
+  border-radius:100px;
+  transform:scale(1.2);
+}
+}
+@media only screen and (width>=768px){
+  :root{
+  font-size:20px;
+}
+.GameContainer{
+    width:100%;
+    height:100%;
+
+}
+.ContainerBoxes{
+    position:absolute;
+}
+.LandingBox{
+    width:100%;
+    height:100vh;
+    z-index:4;
+    background: linear-gradient(90deg,gold,goldenrod);
+    display:flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    gap:50px;
+}
+.MoveLandingBox{
+    transform-origin: left top;
+    transform:rotate(100deg);
+    transition: transform 2s linear 1s;
+}
+.TextBox{
+    width:100%;
+    height:50%;
+  
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap:20px;
+}
+.Tic{
+    width:100%;
+    height:max-content;
+
+    text-align: center;
+    font-size: 6rem;
+    font-weight: bold;
+    color:yellow;
+}
+.Tactoe{
+    width:100%;
+    height:max-content;
+    text-align: center;
+    font-size: 3rem;
+    font-weight: bold;
+    color:yellow;
+    
+}
+.ProgressBox{
+  width:100%;
+  height:30vh;
+  display: flex;
+  flex-direction:column;
+  justify-content: center;
+  align-items: center;
+}
+.ProgressBorder{
+  width:90%;
+  height:max-content;
+  padding:3px;
+  border:3px solid yellow;
+  border-radius:200px;
+
+}
+.ProgressBar{
+  width:100%;
+  height:5vh;
+  border-radius:200px;
+}
+.ChosingBox{
+  width:100vw;
+  height:100vh;
+  background: linear-gradient(45deg,gold,goldenrod);
+  z-index:3;
+  transition:transform 1s linear;
+  display: flex;
+  flex-direction:column ;
+  justify-content: center;
+  align-items: center;
+}
+.ChosingBox h1{
+  width:100%;
+  font-size: 4rem;
+  text-align: center;
+  padding:20px;
+  color:yellow;
+}
+.TokkenBox{
+  width:70%;
+  height:200px;
+   
+  display:flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.Tokken{
+  width:150px;
+  height:150px;
+  font-size:5rem;
+  font-weight: bold;
+  color:yellow;
+  display: flex;
+  flex-direction:column ;
+  justify-content: center;
+  align-items: center;
+  
+}
+.BorderRadius{
+  
+  border-radius:50px;
+  background-color: yellow;
+  color:goldenrod;
+  
+}
+.PlayBtn{
+  width:100%;
+  display:flex;
+  justify-content:center;
+}
+button{
+  width:200px;
+  height:70px;
+  border-radius: 10px;
+  background: linear-gradient(45deg, gold,goldenrod);
+  border-color:goldenrod;
+  color:yellow;
+  outline:none;
+  padding:10px;
+  font-weight:bold;
+  font-size:1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.MoveUpChosingBox{
+  transform:translateY(-150%);
+}
+.BoardGameBox{
+  width:100vw;
+  height:100vh;
+  z-index:1;
+  background: linear-gradient(45deg,gold,goldenrod);
+  display:flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.BoardGameBox .BoardTextBox{
+  width:100%;
+  height:max-content;
+  background-color: gold;
+   padding:10px;
+   
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+  
+}
+.BoardGameBox .BoardTextBox h2{
+  width:50%;
+  height:65px;
+  color:yellow;
+  border-radius:20px;
+  font-size: 3rem;
+  font-weight:bold;
+  background-color: gold;
+  display: flex;
+  justify-content: center;
+   align-items: center;
+   
+  
+}
+.BoardGameBox .BoardTextBox .TurnShowBox{
+  width:50%;
+  height:100px;
+  color:yellow;
+  border-radius:20px;
+  font-size: 3rem;
+  font-weight:bold;
+  background-color: goldenrod;
+  display: flex;
+  justify-content: center;
+   align-items: center;
+  
+}
+.BoardBox{
+  width:100%;
+  height:60%;
+  z-index:1;
+  display:grid;
+  grid-template-columns: repeat(3,150px);
+  grid-template-rows:repeat(3,150px);
+  grid-gap:1%;
+  justify-content: center;
+  align-content: center;
+  
+}
+.Boxes{
+  transition: background-color,color,border-radius,transform 2s linear ;
+  border:10px solid yellow;
+  color:yellow;
+  font-weight:bold;
+  font-size:5rem;
+  display:flex;
+  justify-content:center;
+  align-items: center;
+}
+.DrawBox{ 
+  width:100%;
+  height:600px;
+  
+  transition: transform 2s linear;
+  transform:translateY(-200vh);
+  z-index:2;
+  display:flex;
+  justify-content:center;
+  align-items: center;
+}
+.DrawText{
+  
+  width:90%;
+  height:max-content;
+  padding:20px;
+  border-radius: 20px;
+  font-weight: bold;
+  color:white;
+  background-color:crimson;
+  display:flex;
+  justify-content:center;
+  align-items: center;
+}
+.WinnerBox{
+  
+  width:100%;
+  height:100vh;
+  transition: transform 2s linear 3s;
+  transform:translateY(-100%);
+  z-index:2;
+  display:flex;
+  flex-direction: column;
+  justify-content:center;
+  align-items: center;
+  gap:50px;
+}
+.WinnerText{
+  width:80%;
+  height:300px;
+  border-radius: 20px;
+  color:white;
+  background-color:goldenrod;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.WinnerText h1{
+  width:100%;
+  text-align: center;
+  font-size: 3rem;
+  color:yellow;
+}
+.WinnerText .CongratulationBox{
+  font-size: 1.5rem;
+  color:green;
+}
+.WinnerText h3{
+  color:green;
+}
+.GiveBorderRadiusToWinnerBoxes{
+border-color:yellow; 
+background-color: yellow;
+ color:goldenrod;
+  border-radius:100px;
+  transform:scale(1.2);
+}
+}
